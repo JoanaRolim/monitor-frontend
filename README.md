@@ -70,7 +70,7 @@ npm install -g @angular/cli
 
 ```
 git clone https://github.com/JoanaRolim/monitor-frontend.git
-cd nome-do-repositorio-frontend
+cd monitor-de-sites-frontend
 ```
 
 ### Instalar Dependências
