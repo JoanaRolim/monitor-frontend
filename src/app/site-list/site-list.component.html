@@ -1,0 +1,31 @@
+<div class="site-list-container">
+  <div class="header">
+    <h1>Lista de Sites Monitorados</h1>
+    <p>Última atualização: {{ lastUpdated }}</p>
+  </div>
+
+  <app-site-form (siteAdded)="onSiteAdded()"></app-site-form>
+
+  <table class="site-table">
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th>Status</th>
+        <th>Tempo de Resposta (ms)</th>
+        <th>Data de Criação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let site of sites">
+        <td>{{ site.url }}</td>
+        <td [style.color]="getStatusColor(site)">
+          {{ site.availability ? 'Disponível' : 'Indisponível' }}
+        </td>
+        <td>{{ site.responseTime !== null ? site.responseTime : 'N/A' }}</td>
+        <td>{{ site.createdAt | date:'dd/MM/yyyy HH:mm:ss' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</div>

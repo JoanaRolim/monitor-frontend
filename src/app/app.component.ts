@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'monitor-de-sites-frontend';
+  title = 'Monitoramento de Sites';
 }

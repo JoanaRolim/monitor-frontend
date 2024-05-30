@@ -1,0 +1,6 @@
+<div class="add-site-container">
+  <form (ngSubmit)="addSite()" #siteForm="ngForm" class="add-site-form">
+    <input type="text" name="url" [(ngModel)]="newSite.url" placeholder="URL do site" required />
+    <button type="submit" [disabled]="!siteForm.form.valid">Adicionar Site</button>
+  </form>
+</div>
